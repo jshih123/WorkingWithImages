@@ -8,5 +8,5 @@ void setup() {
 
 void draw() {
   background(0);
-  image(darude, mouseX, mouseY); //center mouse
+  image(darude, mouseX, mouseY, darude.width/2, darude.height/2); //center mouse
 }
