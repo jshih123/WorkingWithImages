@@ -1,5 +1,5 @@
 PImage darude;
-
+float scale = 2;
 void setup() {
   darude = loadImage("darude.jpg");
   size(2048, 1024);
@@ -8,5 +8,5 @@ void setup() {
 
 void draw() {
   background(0);
-  image(darude, mouseX, mouseY, darude.width/2, darude.height/2); //center mouse
+  image(darude, mouseX, mouseY, darude.width * scale, darude.height * scale); //center mouse
 }
