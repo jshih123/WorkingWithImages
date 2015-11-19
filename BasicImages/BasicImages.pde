@@ -1,6 +1,6 @@
 PImage darude;
 float scale = 2;
-int sz = 10;
+float sz;
 
 void setup() {
   darude = loadImage("darude.jpg");
@@ -11,6 +11,7 @@ void setup() {
 
 void draw() {
   noStroke();
+  sz = map(mouseY, 0, height, 1, 20); //size dependant on Y coordinate
   for (int i = 0; i < 30; i++){
   int x = int(random(width));
   int y = int(random(height));
