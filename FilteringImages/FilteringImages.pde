@@ -12,4 +12,6 @@ void draw() {
   noStroke();
   background(nick);
   image(nick2, mouseX, mouseY);
+  filter(INVERT);
+  filter(POSTERIZE, 5);
 }
