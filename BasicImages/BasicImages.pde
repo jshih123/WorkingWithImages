@@ -2,9 +2,11 @@ PImage darude;
 
 void setup() {
   darude = loadImage("darude.jpg");
-  size(1024,512);
+  size(2048, 1024);
+  imageMode(CENTER);
 }
 
 void draw() {
-  image(darude, 0, 0);
+  background(0);
+  image(darude, mouseX, mouseY); //center mouse
 }
