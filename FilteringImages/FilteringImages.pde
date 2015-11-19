@@ -14,4 +14,5 @@ void draw() {
   image(nick2, mouseX, mouseY);
   filter(INVERT);
   filter(POSTERIZE, 5);
+  filter(DILATE);
 }
