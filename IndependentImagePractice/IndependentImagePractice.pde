@@ -16,11 +16,11 @@ void setup(){
   //load images
   dan = loadImage("dan.png");
   for (int i = 0; i < count; i++){
-      x[i] = width/2;
-  y[i] = height/2;
-  diam[i] = size;
-  velX[i] = random(-5, 5);
-  velY[i] = random(-5, 5);
+    x[i] = width/2;
+    y[i] = height/2;
+    diam[i] = size;
+    velX[i] = random(-5, 5);
+    velY[i] = random(-5, 5);
     ethan[i] = loadImage("ethan.png");
   }
   giraffe = loadImage("giraffe.jpg");
@@ -48,6 +48,7 @@ void draw(){
     
     velY[i] += gravity; //add gravity
     velY[i] *= airResistance; //make sure the ball doesn't get higher than starting point
+   
     //bounce ball if it hits walls
     if (x[i] + diam[i]/2 >= width) {
       velX[i] = -abs(velX[i]);    //if the ball hits the right wall, assign x velocity the negative version of itself
@@ -59,11 +60,13 @@ void draw(){
     } else if (y[i] - diam[i]/2 <= 0) {
       velY[i] = abs(velY[i]);
     }
-    
-    if (y[i] >= height) { //make sure ball doesn't escape from bottom of screen
+   //make sure ball doesn't escape from bottom of screen
+    if (y[i] >= height) {
       y[i] = height - velY[i];
       velY[i] = -abs(velY[i]);
     }  
 
+  //apply filter based on where the ball is
+    if (
   }
 }
