@@ -2,6 +2,7 @@
 
 //declare images
 PImage dan, giraffe;
+
 //declare ball variables
 float gravity = .2;
 int count = 2, size = 80;
@@ -39,6 +40,7 @@ void draw() {
   
   //code for balls
   for (int i = 0; i < count; i++) {
+    
     //translate picture to x and y coordinates
     translate(x[i], y[i]); 
     scale(0.75, 0.75);
@@ -55,15 +57,18 @@ void draw() {
 
     //bounce ball if it hits walls
     if (x[i] + diam[i]/2 >= width) {
-      velX[i] = -abs(velX[i]);    //if the ball hits the right wall, assign x velocity the negative version of itself
-    } else if (x[i] - diam[i]/2 <= 0) {
-      velX[i] = abs(velX[i]);     //if the ball hits the left wall, assign x velocity the positive version of itself
+      velX[i] = -abs(velX[i]);
+    }
+    else if (x[i] - diam[i]/2 <= 0) {
+      velX[i] = abs(velX[i]); 
     }
     if (y[i] + diam[i]/2 >= height) {
       velY[i] = -abs(velY[i]);
-    } else if (y[i] - diam[i]/2 <= 0) {
+    }
+    else if (y[i] - diam[i]/2 <= 0) {
       velY[i] = abs(velY[i]);
     }
+    
     //make sure ball doesn't escape from bottom of screen
     if (y[i] >= height) {
       y[i] = height - velY[i];
@@ -84,6 +89,7 @@ void draw() {
       filter(THRESHOLD);
     }
 
+    //add velocity based on mousepress
     if (mousePressed == true){
       velX[i] += random(-5,5);
       velY[i] += random(-5,5);
