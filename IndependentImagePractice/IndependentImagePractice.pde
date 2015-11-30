@@ -45,7 +45,6 @@ void draw() {
     translate(-ethan[i].width/2, -ethan[i].height/2);
     image(ethan[i], 0, 0);
     resetMatrix();
-
     //gravity and air resistance
 
     //add velocity to position
@@ -84,6 +83,13 @@ void draw() {
     if (x[i] >= width/2 && y[i] >= height/2) {
       filter(THRESHOLD);
     }
-    
+
+    if (mousePressed == true){
+      velX[i] += random(-5,5);
+      velY[i] += random(-5,5);
+    }
   }
+  
+
+    
 }
